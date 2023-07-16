@@ -1,0 +1,12 @@
+\newcounter{mycnt}%                       カウンター定義
+\newcommand{\outcnt}{%                    コマンド定義
+  \the\value{mycnt}%                      カウンター出力
+  \ifnum\value{mycnt}>100 (over 100)\fi%  100以上の場合
+  \stepcounter{mycnt}%                    mycnt++
+}
+
+\setcounter{mycnt}{1}
+
+\newcommand{\question}{\begin{center}
+    {\Large\textbf{問 \outcnt.}}\\
+\end{center}\noindent}
