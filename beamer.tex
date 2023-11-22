@@ -1,15 +1,39 @@
 % theme
 \usetheme[numbering=fraction]{metropolis}
 % fonts
+\usefonttheme{professionalfonts} 
+%% Japanese
 \usepackage{luatexja}
-\usepackage[ipaex, deluxe]{luatexja-preset}
+\usepackage[no-math]{luatexja-fontspec}
+
+\newjfontface{\nonproportional}{BIZ UDGothic}[YokoFeatures={JFM=ujis}]
+\setsansjfont[Ligatures={Common,TeX},
+  ItalicFont={BIZ UDPGothic},
+  ItalicFeatures={FakeSlant=0.23},
+  SlantedFont={BIZ UDPGothic},
+  SlantedFeatures={FakeSlant=0.23},
+  BoldFont={BIZ UDPGothic Bold},
+  BoldSlantedFont={BIZ UDPGothic Bold},
+  BoldSlantedFeatures={FakeSlant=0.23},
+  BoldItalicFont={BIZ UDPGothic Bold},
+  BoldItalicFeatures={FakeSlant=0.23},
+  YokoFeatures={JFM=prop}]{BIZ UDPGothic}
 \renewcommand{\kanjifamilydefault}{\gtdefault}% 既定をゴシック体に
+%% English
+\usepackage[T1]{fontenc}
+\usepackage{cabin}
+%% Math
+\usepackage{mathabx}
+
 % math
 \usepackage{amsmath}
 \usepackage{mathtools}
 \mathtoolsset{showonlyrefs=true}
+%chem
+\usepackage[version=4]{mhchem}
 % other
-\usepackage[range-phrase = から]{siunitx}
+\usepackage{siunitx}
+\sisetup{detect-all = true, detect-family = true, range-phrase = から}
 \usepackage{graphicx}
 \usepackage{multimedia}
 % table
@@ -19,6 +43,5 @@
 \renewcommand{\figurename}{図}
 \renewcommand{\tablename}{表}
 
-\author{Hoge Hoge}
 \date{\today}
-\institute[Fuga Fuga]{Mocho Mocho}
+
